@@ -14,8 +14,8 @@ export class UserAdd extends Action {
     }
 
     async run(data) {
-        const res = await Users.userAdd(data.params.name);
-        return { res };
+        const user = await Users.userAdd(data.params.name);
+        return { user };
     }
 }
 
@@ -32,7 +32,7 @@ export class UserGet extends Action {
     }
 
     async run(data) {
-        const res = await Users.userGet(data.params._id);
-        return { res };
+        const user = await Users.userGet(data.params._id);
+        return { user };
     }
 }

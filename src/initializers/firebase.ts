@@ -1,9 +1,11 @@
 import { api, Initializer } from "actionhero";
 
+require('dotenv').config();
+
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 
-const serviceAccount = require('./../keys/anino-leaderboard-firebase-adminsdk-swpxi-293a4320c1.json');
+const serviceAccount = require(process.env.FIRESTORE_PATH);
 
 export class FirebaseInitializer extends Initializer {
     constructor(){

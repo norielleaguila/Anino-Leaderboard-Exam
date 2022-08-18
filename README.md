@@ -67,7 +67,7 @@ npm start
     - CMD
         
         ```powershell
-        curl -d "name=test leaderboard" http://localhost:8080/admin/leaderboar
+        curl -d "name=test leaderboard" http://localhost:8080/admin/leaderboard
         ```
         
     - Application Result

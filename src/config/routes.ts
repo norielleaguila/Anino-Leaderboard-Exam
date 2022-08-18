@@ -4,7 +4,8 @@ export const DEFAULT = {
       get: [
         { path: "/user/:_id", action: "userGet"},
         { path: "/users", action: "usersGet"},
-        { path: "/leaderboard/:_id(.*)", action: "leaderboardGet"}
+        { path: "/leaderboard/:_id", action: "leaderboardGet"},
+        { path: "/leaderboard/:_id?per_page=(^\\d$)&page=(^\\d&)", action: "leaderboardGet"}
       ],
       post: [
         { path: '/user', action: 'userAdd' },

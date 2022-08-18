@@ -7,7 +7,13 @@ export class EntryAdd extends Action {
         super();
         this.name = "entryAdd";
         this.description = "API end-point for adding a user score entry to a leaderboard";
-        this.outputExample = { };
+        this.outputExample = {"entry": {
+            _id: "<unique id>",
+            board_id: "<unique id>",
+            score: "<number>",
+            scored_at: "<ISO timestamp>",
+            user_id: "<unique id>"
+        }};
         
         this.inputs = {
             _id: { required: true },

@@ -1,5 +1,13 @@
 import * as CollectionModule from "./../classes/collectionModules";
 
+/**
+ * function to add an entry
+ * will check if board and the user exists, then attempts to add a new entry or update a previous entry
+ * @param _id unique leaderboard id
+ * @param user_id unique user id
+ * @param score_to_add score to be added to user's entry
+ * @returns data update detail
+ */
 export async function entryAdd ( _id: string, user_id: string, score_to_add: string ) {
     const dbRef = CollectionModule.firestore().collection(CollectionModule.leaderboardPath);
     const entriesRef = CollectionModule.firestore().collection(CollectionModule.entriesPath);

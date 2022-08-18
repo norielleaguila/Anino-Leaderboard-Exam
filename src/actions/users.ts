@@ -6,7 +6,7 @@ export class UserAdd extends Action {
         super();
         this.name = "userAdd";
         this.description = "API end-point for creating a user";
-        this.outputExample = { _id:  "<randomized ID>", name: "Randy", updated_at: "<timestamp>", created_at: "<timestamp>"};
+        this.outputExample = { _id:  "<randomized ID>", name: "Randy" };
         
         this.inputs = {
             name: { required: true }
@@ -24,7 +24,7 @@ export class UserGet extends Action {
         super();
         this.name = "userGet";
         this.description = "API end-point for retrieving a user";
-        this.outputExample = { _id:  "<randomized ID>", name: "Randy", updated_at: "<timestamp>", created_at: "<timestamp>"};
+        this.outputExample = { _id:  "<randomized ID>", name: "Randy" };
         
         this.inputs = {
             _id: { required: true }

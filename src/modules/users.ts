@@ -1,10 +1,10 @@
 import * as CollectionModule from "./../classes/collectionModules";
 
 /**
- * function to create or update a user
- * checks if user exists, then creates or updates the user
- * @param name 
- * @returns user id and name
+ * function to create a user
+ * checks if user exists, then creates the user
+ * @param name unique name to be created
+ * @returns user id, name
  */
 export async function userAdd ( name: string ) {
     const dbRef = CollectionModule.firestore().collection(CollectionModule.usersPath);
@@ -28,6 +28,11 @@ export async function userAdd ( name: string ) {
     };
 }
 
+/**
+ * function to retrieve user id and name
+ * @param _id unique user identifier
+ * @returns user id, name
+ */
 export async function userGet ( _id: string ) {
     const dbRef = CollectionModule.firestore().collection(CollectionModule.usersPath);
     const user = await dbRef.doc(_id).get();
@@ -41,6 +46,12 @@ export async function userGet ( _id: string ) {
     };
 }
 
+/**
+ * function to update a user
+ * will be called after entry adding
+ * @param _id unique user identifier
+ * @returns update metadata
+ */
 export async function userUpdate ( _id: string ) {
     const dbRef = CollectionModule.firestore().collection(CollectionModule.usersPath);
     const user = await dbRef.doc(_id).get();

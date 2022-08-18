@@ -6,7 +6,12 @@ export class LeaderboardAdd extends Action {
         super();
         this.name = "leaderboardAdd";
         this.description = "API end-point for creating a leaderboard";
-        this.outputExample = { };
+        this.outputExample = {
+            board: {
+                _id: "<unique id>",
+                name: "test leaderboard"
+            }
+        };
         
         this.inputs = {
             name: { required: true }
@@ -24,8 +29,20 @@ export class LeaderboardGet extends Action {
         super();
         this.name = "leaderboardGet";
         this.description = "API end-point for retrieving a leaderboard";
-        this.outputExample = { };
-        
+        this.outputExample = {
+            board: {
+                _id: "<unique id>",
+                name: "WatchMojo Top 10",
+                entries: [{
+                    score: "<number>",
+                    user_id: "<unique id>",
+                    scored_at: "2022-08-18T18:49:34.633Z",
+                    rank: "<number>",
+                    name: "<user name>"
+                }]
+            }
+        };
+
         this.inputs = {
             _id: { required: true },
             per_page: { required: false },

@@ -1,5 +1,10 @@
 import * as CollectionModule from "./../classes/collectionModules";
 
+/**
+ * function to add a leaderboard
+ * @param name unique name to be created
+ * @returns leaderboard details
+ */
 export async function leaderboardAdd ( name: string ) {
     const dbRef = CollectionModule.firestore().collection(CollectionModule.leaderboardPath);
 
@@ -15,6 +20,13 @@ export async function leaderboardAdd ( name: string ) {
     return { _id: res.id, name: name };
 }
 
+/**
+ * function to retrieve a leaderboard
+ * @param _id unique leaderboard id
+ * @param per_page number of records per page
+ * @param page starting page number
+ * @returns leaderboard details as well as its entries
+ */
 export async function leaderboardGet ( _id: string, per_page: string, page: string) {
     const boardRef = CollectionModule.firestore().collection(CollectionModule.leaderboardPath);
     const dbRef = CollectionModule.firestore().collection(CollectionModule.entriesPath);

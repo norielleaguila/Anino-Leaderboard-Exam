@@ -20,7 +20,7 @@ npm build
 
 Next, create a *keys* folder inside the *dist* folder.
 
-Unzip *firestore-key.zip* and place it in dist/keys.
+Unzip *firestore-key.zip* and place the JSON file in dist/keys.
 
 ```powershell
 # start the application

@@ -11,9 +11,11 @@ This leaderboard API uses ActionHero JS and Cloud Firestore to generate users, l
 You will need to have node and npm installed.
 
 ```powershell
-# install all dependencies and generate deployment files
+# install all dependencies
 npm install
-npm run build
+
+# if dist folder is not generated
+npm build
 ```
 
 Next, create a *keys* folder inside the *dist* folder.
@@ -31,7 +33,7 @@ npm start
     - CMD
         
         ```powershell
-        curl -d "name=jane" http://localhost:8080/user
+        curl -d "name=jane" "http://localhost:8080/user"
         ```
         
     - Application Result
@@ -49,7 +51,7 @@ npm start
     - CMD
         
         ```powershell
-        curl http://localhost:8080/user/dsSzYAZu0Q9v5WWNTilB
+        curl "http://localhost:8080/user/dsSzYAZu0Q9v5WWNTilB"
         ```
         
     - Application Result
@@ -67,7 +69,7 @@ npm start
     - CMD
         
         ```powershell
-        curl -d "name=test leaderboard" http://localhost:8080/admin/leaderboard
+        curl -d "name=test leaderboard" "http://localhost:8080/admin/leaderboard"
         ```
         
     - Application Result
@@ -85,7 +87,7 @@ npm start
     - CMD
         
         ```powershell
-        curl http://localhost:8080/leaderboard/hJL1E6SxbojytH6DIiKJ?per_page=4&page=1
+        curl "http://localhost:8080/leaderboard/hJL1E6SxbojytH6DIiKJ?per_page=4&page=1"
         ```
         
     - Application Result
@@ -133,7 +135,7 @@ npm start
     - CMD
         
         ```powershell
-        curl -d "score_to_add=30" http://localhost:8080/leaderboard/hJL1E6SxbojytH6DIiKJ/user/jAoqANMS3wXRIU6AQvqh/add_score
+        curl -d "score_to_add=30" "http://localhost:8080/leaderboard/hJL1E6SxbojytH6DIiKJ/user/jAoqANMS3wXRIU6AQvqh/add_score"
         ```
         
     - Application Result
